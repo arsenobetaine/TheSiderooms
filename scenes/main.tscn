@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=4 uid="uid://by1w6uo80q22l"]
+
+[ext_resource type="PackedScene" uid="uid://bbab1sgcr85og" path="res://scenes/char.tscn" id="1_2ft3g"]
+[ext_resource type="Texture2D" uid="uid://bcd444t7yvu7k" path="res://assets/0sprite-0005.png" id="1_5joi7"]
+[ext_resource type="PackedScene" uid="uid://dp27x4fpy0pnh" path="res://scenes/icon.tscn" id="2_jhum0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jloom"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44oax"]
+texture = ExtResource("1_5joi7")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.25, 0, 8, -0.125, 8, 4.875, -1, 5)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 4, -0.125, 4.25, 4.875, -8, 5)
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lbpae"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_jloom")
+sources/1 = SubResource("TileSetAtlasSource_44oax")
+
+[node name="main" type="Node2D"]
+position = Vector2(570, 470)
+scale = Vector2(4, 4)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAABAP7/AQAAAAEAAAABAP//AQAAAAIAAAD+//7/AQAAAAEAAAD+////AQAAAAIAAAADAAAAAQABAAAAAAACAAAAAQABAAAAAAABAAAAAQABAAAAAAAAAAAAAQABAAAAAAD//wAAAQABAAAAAAD+/wAAAQABAAAAAAD9/wAAAQABAAAAAAD8/wAAAQABAAAAAAADAAEAAQAAAAAAAAACAAEAAQAAAAAAAAABAAEAAQAAAAAAAAAAAAEAAQAAAAAAAAD//wEAAQAAAAAAAAD+/wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD8/wEAAQAAAAAAAAD8/wIAAQAAAAAAAAD9/wIAAQAAAAAAAAD+/wIAAQAAAAAAAAD//wIAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAIAAQAAAAAAAAACAAIAAQAAAAAAAAADAAIAAQAAAAAAAAD7/wIAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAEAAQABAAAAAAD7/wEAAQABAAAAAAD3/wEAAQACAAAAAAD4/wEAAQADAAAAAADz/wEAAQACAAAAAAD0/wEAAQADAAAAAAAHAAEAAQACAAAAAAAIAAEAAQADAAAAAAALAAEAAQACAAAAAAAMAAEAAQADAAAAAAA=")
+tile_set = SubResource("TileSet_lbpae")
+
+[node name="char" parent="." instance=ExtResource("1_2ft3g")]
+scale = Vector2(1, 1)
+
+[node name="icon" parent="." instance=ExtResource("2_jhum0")]
+position = Vector2(0, -67.75)
+scale = Vector2(0.2, 0.2)

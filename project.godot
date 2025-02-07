@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="TheSiderooms"
-run/main_scene="res://Scenes/root.tscn"
+config/name="The Siderooms"
+config/description="A Game"
+config/tags=PackedStringArray("2d", "demo", "official")
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://Assets/icon.svg"
+config/icon="res://assets/icon.svg"
 
 [rendering]
 
